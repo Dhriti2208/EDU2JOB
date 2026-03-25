@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+<h1>Your Profile</h1>
+
+<div class="section-title">Academic Details</div>
+<p><strong>Name:</strong> {{ profile.name }}</p>
+<p><strong>Degree:</strong> {{ profile.degree }}</p>
+<p><strong>Specialization:</strong> {{ profile.specialization }}</p>
+<p><strong>CGPA:</strong> {{ profile.cgpa }}</p>
+
+<div class="section-title">Skills</div>
+<p>{{ profile.skills | join(', ') }}</p>
+
+<div class="back-link">
+<a href="/dashboard">← Back to Dashboard</a>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

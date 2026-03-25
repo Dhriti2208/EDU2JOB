@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Mapping - Edu2Job</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Skill Mapping</h1>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <p class="success">{{ messages[0] }}</p>
+          {% endif %}
+        {% endwith %}
+
+        <form method="post">
+            <div class="skills">
+                <label><input type="checkbox" name="skills" value="Python"
+                {% if "Python" in profile.skills %}checked{% endif %}> Python</label>
+
+                <label><input type="checkbox" name="skills" value="Java"
+                {% if "Java" in profile.skills %}checked{% endif %}> Java</label>
+
+                <label><input type="checkbox" name="skills" value="Web Development"
+                {% if "Web Development" in profile.skills %}checked{% endif %}> Web Development</label>
+
+                <label><input type="checkbox" name="skills" value="Machine Learning"
+                {% if "Machine Learning" in profile.skills %}checked{% endif %}> Machine Learning</label>
+
+                <label><input type="checkbox" name="skills" value="Data Analysis"
+                {% if "Data Analysis" in profile.skills %}checked{% endif %}> Data Analysis</label>
+            </div>
+
+            <button type="submit">Save Skills</button>
+        </form>
+
+        <div class="back-link">
+            <a href="/dashboard">← Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

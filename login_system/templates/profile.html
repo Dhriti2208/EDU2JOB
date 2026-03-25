@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Setup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+<h1>Profile Setup</h1>
+
+<form method="post" enctype="multipart/form-data">
+
+<div class="section-title">Academic Details</div>
+<input type="text" name="name" placeholder="Full Name">
+<input type="text" name="degree" placeholder="Degree">
+<input type="text" name="specialization" placeholder="Specialization">
+<input type="text" name="cgpa" placeholder="CGPA">
+
+<div class="section-title">Technical Skills</div>
+<div class="skills-grid">
+<label><input type="checkbox" name="skills" value="Python"> Python</label>
+<label><input type="checkbox" name="skills" value="Java"> Java</label>
+<label><input type="checkbox" name="skills" value="Web Development"> Web Development</label>
+<label><input type="checkbox" name="skills" value="Machine Learning"> Machine Learning</label>
+<label><input type="checkbox" name="skills" value="Data Analysis"> Data Analysis</label>
+</div>
+
+<div class="section-title">Soft Skills</div>
+<div class="skills-grid">
+<label><input type="checkbox" name="skills" value="Communication"> Communication</label>
+<label><input type="checkbox" name="skills" value="Leadership"> Leadership</label>
+<label><input type="checkbox" name="skills" value="Teamwork"> Teamwork</label>
+<label><input type="checkbox" name="skills" value="Problem Solving"> Problem Solving</label>
+</div>
+
+<div class="section-title">Profile Photo</div>
+<input type="file" name="photo">
+
+<button type="submit">Save Profile</button>
+
+</form>
+
+<div class="back-link">
+<a href="/dashboard">← Back to Dashboard</a>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

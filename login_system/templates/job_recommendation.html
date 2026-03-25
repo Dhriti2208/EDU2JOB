@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Career Recommendations</h1>
+
+<p style="margin-bottom:25px;opacity:0.8;">
+Based on your academic profile:
+<strong>{{ profile.degree }}</strong> |
+<strong>{{ profile.specialization }}</strong> |
+CGPA: <strong>{{ profile.cgpa }}</strong>
+</p>
+
+{% if top_jobs and top_jobs|length > 0 %}
+
+    {% for job in top_jobs[:2] %}
+
+    <div class="recommend-box" style="margin-bottom:20px;">
+
+        <h3 style="margin-bottom:10px;">
+            {{ loop.index }}. {{ job.job }}
+        </h3>
+
+        <p style="font-size:15px;opacity:0.85;">
+            This role aligns well with your academic background and performance.
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <div class="recommend-box">
+        <p>Unable to generate recommendations.</p>
+    </div>
+
+{% endif %}
+
+<div class="back-link" style="margin-top:25px;">
+<a href="/dashboard">← Back to Dashboard</a>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

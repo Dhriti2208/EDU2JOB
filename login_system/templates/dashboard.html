@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>Edu2Job</h2>
+        <a href="/profile">Profile Setup</a>
+        <a href="/view-profile">View Profile</a>
+        <a href="/job-recommendation">Job Recommendation</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="hero">
+            <h1>Welcome, {{ user }}</h1>
+            <p>
+                Edu2Job bridges academic knowledge with career opportunities.
+                By analysing your education and skills,
+                the system identifies roles aligned with your strengths.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
